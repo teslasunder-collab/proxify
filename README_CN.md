@@ -8,9 +8,6 @@
   [English](./README.md) / 简体中文
   
   <p>
-    <strong>支持 OpenAI、Anthropic (Claude)、Google (Gemini)、DeepSeek 等几乎所有主流 AI 模型厂商</strong>
-  </p>
-  <p>
     <a href="https://github.com/poixeai/proxify/blob/main/LICENSE">
       <img alt="License" src="https://img.shields.io/github/license/poixeai/proxify?style=for-the-badge&color=blue">
     </a>
