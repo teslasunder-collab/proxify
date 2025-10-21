@@ -14,7 +14,7 @@ export default function QuickStartSection() {
     return (
         <section className="mt-10 border-t pt-5" id='quick-start'>
             <div className="mx-auto max-w-4xl px-6 lg:px-8">
-                {/* 标题部分 */}
+                {/* title */}
                 <div className="text-center">
                     <h2 className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50">
                         {t("home.quick_start.title")}
@@ -24,7 +24,7 @@ export default function QuickStartSection() {
                     </p>
                 </div>
 
-                {/* 步骤流程 */}
+                {/* step */}
                 <div className="mt-10 space-y-12">
                     {/* Step 1 */}
                     <div className="flex flex-col gap-6 md:flex-row md:items-start">

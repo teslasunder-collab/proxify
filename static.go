@@ -30,6 +30,7 @@ func MountFrontend(r *gin.Engine) {
 	r.StaticFS("/assets", http.FS(assetsFS))
 
 	h := http.FS(sub)
+	r.StaticFileFS("/x.svg", "x.svg", h)
 	r.StaticFileFS("/favicon.ico", "favicon.ico", h)
 	r.StaticFileFS("/vite.svg", "vite.svg", h)
 
