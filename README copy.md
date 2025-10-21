@@ -1,12 +1,20 @@
+好的，这是一个根据您提供的资料和需求，并参考了主流开源项目风格设计的 `README.md` 文件。它结构清晰、信息全面，旨在为您的项目 `Proxify` 打造一个专业且吸引人的第一印象。
+
+---
+
+直接复制以下 Markdown 内容并保存为 `README.md` 即可。
+
+```markdown
 <div align="center">
   <a href="https://github.com/poixeai/proxify">
-    <img src="https://proxify.poixe.com/x.svg" alt="Proxify Logo" width="100" height="100">
+    <img src="https://proxify.poixe.com/logo.svg" alt="Proxify Logo" width="120" height="120">
   </a>
   <h1>Proxify</h1>
   <p>一个开源、轻量、高性能的 AI 接口反向代理网关</p>
   <p>
     <strong>支持 OpenAI、Anthropic (Claude)、Google (Gemini)、DeepSeek 等几乎所有主流 AI 模型厂商</strong>
   </p>
+
   <p>
     <a href="https://github.com/poixeai/proxify/blob/main/LICENSE">
       <img alt="License" src="https://img.shields.io/github/license/poixeai/proxify?style=for-the-badge&color=blue">
@@ -32,35 +40,25 @@
 
 ---
 
-**Proxify** 是一个用 Go 编写的高性能反向代理网关。它允许开发者通过统一的入口访问各类大模型 API，解决了地区限制、多服务配置复杂等问题。Proxify 对 LLM 的流式响应进行了深度优化，确保了最佳的性能和用户体验。
+**Proxify** 是一个专为 AI 服务设计的开源、轻量级、自托管反向代理解决方案。它允许开发者通过统一的入口访问各类大模型 API，解决了地区限制、多服务配置复杂等问题。Proxify 对 LLM 的流式响应进行了深度优化，确保了最佳的性能和用户体验。
 
 ## ✨ 功能特性
 
 *   💎 **强大扩展能力**：不仅是 AI 接口网关，Proxify 也是一个通用的反向代理服务器。我们对 LLM API 做了专项优化，包括流式传输、心跳保活、尾部冲刺等。
-
 *   🚀 **统一 API 入口**：通过一级路径即可路由到不同上游，例如 `/openai` → `api.openai.com`，`/gemini` → `generativelanguage.googleapis.com`。所有路由规则一处配置，简单高效。
-
 *   ⚡ **轻量与高性能**：后端采用 Golang 构建，原生支持高并发，资源占用极低。在 0.5 GB 内存的服务器上也能轻松流畅运行。
-
 *   🚄 **极致流式优化**：
-
     *   **平滑输出**：内置流控器，将大模型快速生成的文本块平滑地以“打字机”效果流式传输给客户端。
-
     *   **心跳维持**：在 SSE (Server-Sent Events) 流中自动插入心跳消息，有效防止因网络空闲导致的连接意外中断。
     *   **尾部冲刺**：在保障丝滑输出的同时，通过尾部冲刺技术将最坏延迟控制在可接受范围，优化最终响应时间。
-
 *   🛡️ **安全与隐私**：自托管部署，所有请求数据完全在您自己的掌控之下，不经过任何第三方服务器，彻底杜绝隐私泄露风险。
-
 *   🌐 **广泛兼容性**：已预置 OpenAI、Azure、Claude、Gemini、DeepSeek 等主流 AI 服务商的路由，同时支持通过配置文件便捷地横向扩展到任意 API。
-
 *   🔧 **极致易用**：从现有服务切换到 Proxify，通常只需修改一行 `baseURL` 配置，无需改动任何业务代码或请求参数。
-
 *   👨‍💻 **开源与专业**：项目由 AI 领域资深团队设计与维护，代码完全开源、透明可审计，杜绝供应商锁定，欢迎社区贡献（PRs / Issues）。
 
 ## 🛠️ 技术栈
 
 *   **后端网关**: Golang + Gin
-
 *   **前端面板**: React + Vite + TypeScript + Tailwind CSS
 
 ## 🚀 快速开始
@@ -76,7 +74,6 @@
 在您的代码中，将原始 API 的基础 URL 替换为您的 Proxify 部署地址，并附加上一步中确定的路径前缀。
 
 - **原始地址**: `https://api.openai.com/v1/chat/completions`
-
 - **替换为**: `http://<您的-Proxify-地址>/openai/v1/chat/completions`
 
 #### 3. 发送请求
@@ -88,25 +85,28 @@
 ```javascript
 // Node.js example using /openai proxy endpoint
 import OpenAI from "openai";
+
 const openai = new OpenAI({ 
     // highlight-start
     apiKey: "sk-...", // 您的 OpenAI API Key
     baseURL: "http://127.0.0.1:8080/openai/v1", // 指向您的 Proxify 服务
     // highlight-end
 });
+
 async function main() {
     const stream = await openai.chat.completions.create({
         model: "gpt-4",
         messages: [{ role: "user", content: "你好，请介绍一下自己" }],
         stream: true,
     });
+
     for await (const chunk of stream) {
         process.stdout.write(chunk.choices[0]?.delta?.content || "");
     }
 }
+
 main();
 ```
-
 
 ## 🖥️ 部署教程
 
@@ -226,3 +226,4 @@ Proxify 支持代理任何 HTTP 服务。以下是一些预设的、经过优化
 <div align="center">
   <p>Powered by <a href="https://poixe.com">Poixe AI</a></p>
 </div>
+```

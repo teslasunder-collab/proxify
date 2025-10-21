@@ -68,3 +68,8 @@ jobs:
           echo "Successfully pushed:"
           echo " - ${{ env.IMAGE_NAME }}:latest"
           echo " - ${{ env.IMAGE_NAME }}:${{ steps.vars.outputs.version }}"
+
+      - name: Re-push latest to bump it on top
+        run: |
+          docker pull ${{ env.IMAGE_NAME }}:latest
+          docker push ${{ env.IMAGE_NAME }}:latest
