@@ -5,9 +5,8 @@ import react from '@vitejs/plugin-react'
 
 // https://vite.dev/config/
 export default defineConfig(({ mode }) => {
-  // 加载环境变量
   const env = loadEnv(mode, process.cwd(), '')
-  
+
   return {
     plugins: [react(), tailwindcss()],
     resolve: {
@@ -18,7 +17,14 @@ export default defineConfig(({ mode }) => {
     server: {
       host: env.VITE_HOST || 'localhost',
       port: parseInt(env.VITE_PORT) || 5173,
-      open: false, // 自动打开浏览器
+      open: false, // auto open browser
+      proxy: {
+        '/api': {
+          target: 'http://localhost:7777', // Go backend server address
+          changeOrigin: true,
+          rewrite: (path) => path.replace(/^\/api/, '/api'),
+        },
+      },
     },
   }
 })

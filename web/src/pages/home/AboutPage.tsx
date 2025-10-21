@@ -1,8 +1,0 @@
-
-export default function AboutPage() {
-    return (
-        <>
-        <div className="flex justify-center mt-10 text-2xl">about</div>
-        </>
-    )
-}

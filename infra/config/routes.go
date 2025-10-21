@@ -6,8 +6,10 @@ import (
 )
 
 type Route struct {
-	Path   string `json:"path"`
-	Target string `json:"target"`
+	Path        string `json:"path"`
+	Target      string `json:"target"`
+	Name        string `json:"name"`
+	Description string `json:"description"`
 }
 
 type RoutesConfig struct {

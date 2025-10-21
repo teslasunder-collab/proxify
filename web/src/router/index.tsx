@@ -1,9 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
 import { lazy } from "react";
 import { Suspense } from "react";
+import { MainLayout } from "@/components/layouts/MainLayout";
 const Home = lazy(() => import("@/pages/home/HomePage"));
-const About = lazy(() => import("@/pages/home/AboutPage"));
-const NotFound = lazy(() => import("@/pages/home/NotFoundPage"));
+const NotFound = lazy(() => import("@/pages/404/NotFoundPage"));
 
 export const router = createBrowserRouter([
     // === home ===
@@ -11,26 +11,27 @@ export const router = createBrowserRouter([
         path: "/",
         element: (
             <Suspense>
-                <Home />
+                <MainLayout />
             </Suspense>
         ),
-    },
-    {
-        path: "/about",
-        element: (
-            <Suspense>
-                <About />
-            </Suspense>
-        ),
-    },
-
-    // === 404 ===
-    {
-        path: "*",
-        element: (
-            <Suspense>
-                <NotFound />
-            </Suspense>
-        ),
+        children: [
+            {
+                index: true,
+                element: (
+                    <Suspense>
+                        <Home />
+                    </Suspense>
+                ),
+            },
+            // === 404 ===
+            {
+                path: "*",
+                element: (
+                    <Suspense>
+                        <NotFound />
+                    </Suspense>
+                ),
+            },
+        ]
     },
 ])
