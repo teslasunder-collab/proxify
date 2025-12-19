@@ -42,7 +42,7 @@ COPY . .
 COPY --from=frontend-builder /app/web/dist ./web/dist
 
 # debug
-# COPY routes.json ./
+COPY routes.json ./
 # COPY .env ./
 
 # Build binary
