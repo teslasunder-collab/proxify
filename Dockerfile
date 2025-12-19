@@ -42,7 +42,6 @@ COPY . .
 COPY --from=frontend-builder /app/web/dist ./web/dist
 
 # debug
-COPY routes.json ./
 # COPY .env ./
 
 # Build binary
@@ -60,6 +59,7 @@ RUN apk add --no-cache tzdata
 
 # Copy built binary
 COPY --from=backend-builder /app/bin/proxify ./
+COPY routes.json ./
 
 # debug
 # RUN mkdir -p /app/log && chown -R proxify:proxify /app
