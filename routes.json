@@ -1,0 +1,25 @@
+{
+  "routes": [
+    {
+      "name": "ElectronHub",
+      "description": "ElectronHub",
+      "path": "/electronhub",
+      "target": "https://api.electronhub.ai/",
+      "model_map": {}
+    },
+    {
+      "name": "Ollama Cloud",
+      "description": "Ollama Cloud",
+      "path": "/ollama",
+      "target": "https://ollama.com/",
+      "model_map": {}
+    },
+    {
+      "name": "Nvidia",
+      "description": "Nvidia",
+      "path": "/nvidia",
+      "target": "https://integrate.api.nvidia.com/",
+      "model_map": {}
+    }
+  ]
+}
