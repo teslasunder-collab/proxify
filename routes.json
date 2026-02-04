@@ -15,7 +15,7 @@
       "model_map": {}
     },
     {
-      "name": "LongCat"
+      "name": "LongCat",
       "description": "LongCat",
       "path": "/longcat",
       "target": "https://api.longcat.chat/openai/",
