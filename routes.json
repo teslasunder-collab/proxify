@@ -1,13 +1,6 @@
 {
   "routes": [
     {
-      "name": "ElectronHub",
-      "description": "ElectronHub",
-      "path": "/electronhub",
-      "target": "https://api.electronhub.ai/",
-      "model_map": {}
-    },
-    {
       "name": "Ollama Cloud",
       "description": "Ollama Cloud",
       "path": "/ollama",
@@ -19,6 +12,13 @@
       "description": "Nvidia",
       "path": "/nvidia",
       "target": "https://integrate.api.nvidia.com/",
+      "model_map": {}
+    },
+    {
+      "name": "LongCat"
+      "description": "LongCat",
+      "path": "/longcat",
+      "target": "https://api.longcat.chat/openai/",
       "model_map": {}
     }
   ]
