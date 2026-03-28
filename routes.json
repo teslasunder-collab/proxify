@@ -20,6 +20,48 @@
       "path": "/longcat",
       "target": "https://api.longcat.chat/openai/",
       "model_map": {}
+    },
+    {
+      "name": "Aihubmix",
+      "description": "aihubmix",
+      "path": "/aihubmix",
+      "target": "https://aihubmix.com/",
+      "model_map": {}
+    },
+    {
+      "name": "Z.ai",
+      "description": "Z.ai",
+      "path": "/zai",
+      "target": "https://z.ai/api/paas/",
+      "model_map": {}
+    },
+    {
+      "name": "Zhipu",
+      "description": "Zhipu",
+      "path": "/zhipu",
+      "target": "https://open.bigmodel.cn/api/paas/",
+      "model_map": {}
+    },
+    {
+      "name": "ModelScope",
+      "description": "ModelScope",
+      "path": "/modelscope",
+      "target": "https://api-inference.modelscope.cn/",
+      "model_map": {}
+    },
+    {
+      "name": "ElectronHub",
+      "description": "electronhub",
+      "path": "/electronhub",
+      "target": "https://api.electronhub.ai/",
+      "model_map": {}
+    },
+    {
+      "name": "Pollinations",
+      "description": "pollinations",
+      "path": "/pollinations",
+      "target": "https://gen.pollinations.ai/",
+      "model_map": {}
     }
   ]
 }
