@@ -62,6 +62,20 @@
       "path": "/pollinations",
       "target": "https://gen.pollinations.ai/",
       "model_map": {}
+    },
+    {
+      "name": "Void",
+      "description": "void ai",
+      "path": "/void",
+      "target": "https://api.voidai.app/",
+      "model_map": {}
+    },
+    {
+      "name": "Routeway",
+      "description": "Routeway",
+      "path": "/routeway",
+      "target": "https://api.routeway.ai/",
+      "model_map": {}
     }
   ]
 }
